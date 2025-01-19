@@ -1,11 +1,8 @@
-window.addEventListener("DOMContentLoaded", function() {
+var AppStoreCool = ["Calender", "Plantera", "Bible", "JS-Clock", "boboclap"]
 
+var AppStoreGames = []
 
-    var AppStoreCool = ["Calender", "Plantera", "Bible", "JS-Clock", "boboclap"]
+var AppStoreTools = []
 
-    var AppStoreGames = []
+var AppStoreMedia = ["streamed"]
 
-    var AppStoreTools = []
-
-    var AppStoreMedia = ["streamed"]
-})
