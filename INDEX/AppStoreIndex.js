@@ -1,8 +1,8 @@
-var AppStoreCool = ["Calender", "Plantera", "Bible", "JS-Clock", "boboclap"]
+let AppStoreCool = ["Calender", "Plantera", "Bible", "JS-Clock", "boboclap"]
 
-var AppStoreGames = []
+let AppStoreGames = []
 
-var AppStoreTools = []
+let AppStoreTools = []
 
-var AppStoreMedia = ["streamed"]
+let AppStoreMedia = ["streamed"]
 
