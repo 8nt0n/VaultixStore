@@ -1,2 +1,33 @@
+import os
+import requests
+from werkzeug.utils import secure_filename
+
 def main(path):
-  return(path)
+  print("f")
+
+  FileUrl = "https://raw.githubusercontent.com/8nt0n/VaultixStore/refs/heads/main/Calender/Calender.js"
+  download_file(FileUrl, path, "Calender.js")
+
+
+
+def download_file(url, path, filename):
+    """Download a JS file from GitHub, save it, and log the encrypted filename."""
+
+
+    # Step 1: Download the JS file from GitHub
+    response = requests.get(url)
+    if response.status_code == 200:
+        installer_content = response.text
+    else:
+        return -1 # Content couldnt be fetched, check Internet connection
+
+
+    # Step 2: Secure and prepare the filename
+    secured_filename = secure_filename(filename)  # Make the filename secure
+
+    # Step 3: Save the installer to the specified directory
+    file_path = os.path.join(path, secured_filename)
+    with open(file_path, 'w') as file:
+        file.write(installer_content)
+
+    return 0
