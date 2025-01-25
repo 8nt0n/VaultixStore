@@ -3,12 +3,15 @@ import requests
 from werkzeug.utils import secure_filename
 
 def main(path):
-  print("f")
+    print("#---Running Calender Installer---#")
 
-  FileUrl = "https://raw.githubusercontent.com/8nt0n/VaultixStore/refs/heads/main/Calender/Calender.js"
-  download_file(FileUrl, path, "Calender.js")
+    FileUrl = "https://raw.githubusercontent.com/8nt0n/VaultixStore/refs/heads/main/Calender/Calender.js"
+    Download = download_file(FileUrl, path, "Calender.js")
 
-
+    if Download != 0:
+        return -1
+    
+    return 0
 
 def download_file(url, path, filename):
     """Download a JS file from GitHub, save it, and log the encrypted filename."""
