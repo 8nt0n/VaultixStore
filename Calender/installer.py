@@ -1,2 +1,2 @@
-def main():
-  return("QWERTYXCMMNAMAM1292X")
+def main(path):
+  return(path)
