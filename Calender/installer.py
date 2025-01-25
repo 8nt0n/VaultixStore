@@ -12,7 +12,7 @@ def main(path):
 
     # Download additional .css file
     FileUrl = "https://raw.githubusercontent.com/8nt0n/VaultixStore/refs/heads/main/Calender/Calender.css"
-    if download_file(FileUrl, path, "Calender.js") != 0:
+    if download_file(FileUrl, path, "Calender.css") != 0:
         return -1
     
     return 0
