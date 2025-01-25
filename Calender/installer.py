@@ -5,10 +5,14 @@ from werkzeug.utils import secure_filename
 def main(path):
     print("#---Running Calender Installer---#")
 
+    # Download Calender.js
     FileUrl = "https://raw.githubusercontent.com/8nt0n/VaultixStore/refs/heads/main/Calender/Calender.js"
-    Download = download_file(FileUrl, path, "Calender.js")
+    if download_file(FileUrl, path, "Calender.js") != 0:
+        return -1 #return -1 if there was an error downloading
 
-    if Download != 0:
+    # Download additional .css file
+    FileUrl = "https://raw.githubusercontent.com/8nt0n/VaultixStore/refs/heads/main/Calender/Calender.css"
+    if download_file(FileUrl, path, "Calender.js") != 0:
         return -1
     
     return 0
