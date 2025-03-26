@@ -1,47 +1,37 @@
 import os
-
 import requests
-
 from werkzeug.utils import secure_filename
 
 
 
 def main(path):
-
     print("#---Running Streamed Installer---#")
 
+    Autostart = path.replace("/", ".") + ".Streamed"
 
+    print(Autostart)
+    print(path)
 
     # Download Calender.js
-
     FileUrl = "https://raw.githubusercontent.com/8nt0n/VaultixStore/refs/heads/main/media/Streamed/Streamed.js"
-
     if download_file(FileUrl, path, "Streamed.js") != 0:
-
         return -1 #return -1 if there was an error downloading
 
 
 
     # Download additional .css file
-
     FileUrl = "https://raw.githubusercontent.com/8nt0n/VaultixStore/refs/heads/main/media/Streamed/Streamed.css"
-
     if download_file(FileUrl, path, "Streamed.css") != 0:
-
         return -1
 
 
 
     # Download additional python backend file
-
     FileUrl = "https://raw.githubusercontent.com/8nt0n/VaultixStore/refs/heads/main/media/Streamed/Streamed.py"
-
     if download_file(FileUrl, path, "Streamed.py") != 0:
-
         return -1
 
     
-
     return 0
 
 
@@ -55,15 +45,10 @@ def download_file(url, path, filename):
 
 
     # Step 1: Download the JS file from GitHub
-
     response = requests.get(url)
-
     if response.status_code == 200:
-
         installer_content = response.text
-
     else:
-
         return -1 # Content couldnt be fetched, check Internet connection
 
 
@@ -71,20 +56,14 @@ def download_file(url, path, filename):
 
 
     # Step 2: Secure and prepare the filename
-
     secured_filename = secure_filename(filename)  # Make the filename secure
 
 
 
     # Step 3: Save the installer to the specified directory
-
     file_path = os.path.join(path, secured_filename)
-
     with open(file_path, 'w') as file:
-
         file.write(installer_content)
-
-
 
     return 0
 
