@@ -32,10 +32,6 @@ def download_file(url, path, filename):
     # Step 2: Secure and prepare the filename
     secured_filename = secure_filename(filename)  # Make the filename secure
 
-    if "/" in secured_filename: #it very likely is, but idk man ill probably fuck smt up and then this if statement will protect my code
-        secured_filename = secured_filename.split("/", 1)[-1]
-
-
     # Step 3: Save the installer to the specified directory
     file_path = os.path.join(path, secured_filename)
     with open(file_path, 'w') as file:
