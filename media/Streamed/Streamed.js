@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function __open_media__() {
     original_height["media-widget"] = "438px"; // Add the height of the widget to height dict. (for minimizing / unfolding the widget)
 
-    loadStylesheet('../static/@apps/Streamed/Streamed.css')
+    loadStylesheet('../static/@apps/media/Streamed/Streamed.css')
 
     createMediaWidget()
 
