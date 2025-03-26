@@ -6,12 +6,12 @@ def main(path):
     print("#---Running Calender Installer---#")
 
     # Download Calender.js
-    FileUrl = "https://raw.githubusercontent.com/8nt0n/VaultixStore/refs/heads/main/Calender/Calender.js"
+    FileUrl = "https://raw.githubusercontent.com/8nt0n/VaultixStore/refs/heads/main/cool/Calender/Calender.js"
     if download_file(FileUrl, path, "Calender.js") != 0:
         return -1 #return -1 if there was an error downloading
 
     # Download additional .css file
-    FileUrl = "https://raw.githubusercontent.com/8nt0n/VaultixStore/refs/heads/main/Calender/Calender.css"
+    FileUrl = "https://raw.githubusercontent.com/8nt0n/VaultixStore/refs/heads/main/cool/Calender/Calender.css"
     if download_file(FileUrl, path, "Calender.css") != 0:
         return -1
     
