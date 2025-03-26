@@ -14,6 +14,11 @@ def main(path):
     FileUrl = "https://raw.githubusercontent.com/8nt0n/VaultixStore/refs/heads/main/media/Streamed/Streamed.css"
     if download_file(FileUrl, path, "Streamed.css") != 0:
         return -1
+
+    # Download additional python backend file
+    FileUrl = "https://raw.githubusercontent.com/8nt0n/VaultixStore/refs/heads/main/media/Streamed/Streamed.py"
+    if download_file(FileUrl, path, "Streamed.py") != 0:
+        return -1
     
     return 0
 
